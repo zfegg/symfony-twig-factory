@@ -1,0 +1,41 @@
+{
+    "name": "zfegg/symfony-twig-factory",
+    "description": "Using symfony/twig-bridge in Expressive. (e.g.: asset,workflow)",
+    "type": "library",
+    "keywords": [
+        "expressive",
+        "twig",
+        "symfony",
+        "asset",
+        "factory"
+    ],
+    "require": {
+        "php": "^7.0",
+        "symfony/twig-bridge": "^4.0",
+        "psr/container": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1",
+        "symfony/asset": "^4.0",
+        "zendframework/zend-coding-standard": "^1.0",
+        "zendframework/zend-servicemanager": "^3.3",
+        "symfony/workflow": "^4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Moln",
+            "email": "moln.xie@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zfegg\\SymfonyTwigFactory\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZfeggTest\\SymfonyTwigFactory\\": "test/"
+        }
+    }
+}
