@@ -3,7 +3,6 @@
 
 namespace Zfegg\SymfonyTwigFactory;
 
-
 use Symfony\Bridge\Twig\Extension\WorkflowExtension;
 use Symfony\Component\Workflow\Registry;
 
