@@ -4,18 +4,19 @@ namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Extension\YamlExtension;
+use Zfegg\SymfonyTwigFactory\Factory\InvokableFactory;
 use Zfegg\SymfonyTwigFactory\Factory\YamlExtensionFactory;
 use PHPUnit\Framework\TestCase;
 
-class YamlExtensionFactoryTest extends TestCase
+class InvokableFactoryTest extends TestCase
 {
 
     public function testInvoke()
     {
         $container = $this->prophesize(ContainerInterface::class);
 
-        $factory = new YamlExtensionFactory();
-        $ext = $factory($container->reveal());
+        $factory = new InvokableFactory();
+        $ext = $factory($container->reveal(), YamlExtension::class);
         $this->assertInstanceOf(YamlExtension::class, $ext);
     }
 }

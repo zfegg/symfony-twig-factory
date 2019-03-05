@@ -25,8 +25,8 @@ TODO factories / 需实现的twig扩展
 - [ ] `code`
 - [ ] `dump`
 - [x] `expression`
-- [ ] `\Symfony\Bridge\Twig\Extension\FormExtension`
-- [ ] `\Symfony\Bridge\Twig\Extension\TranslationExtension`
+- [x] `\Symfony\Bridge\Twig\Extension\FormExtension`
+- [x] `\Symfony\Bridge\Twig\Extension\TranslationExtension`
 - [x] `\Symfony\Bridge\Twig\Extension\WorkflowExtension`
 - [x] `\Symfony\Bridge\Twig\Extension\YamlExtension`
 
@@ -41,8 +41,33 @@ Usage / 使用
 ```bash
 composer require symfony/asset
 ```
+#### 2. Add config provider in project `config.php`. / 在项目中添加配置
 
-#### 2. Add config in project. / 在项目中添加配置  
+
+Customize add you want.
+
+自定义添加您想要的。
+
+```php
+Zfegg\SymfonyTwigFactory\AssetConfigProvider::class,
+Zfegg\SymfonyTwigFactory\FormConfigProvider,
+```
+
+- `Zfegg\SymfonyTwigFactory\ConfigProvider` Load all the configs of twig extensions. / 加载全部 twig 扩展配置.
+    - `Zfegg\SymfonyTwigFactory\AssetConfigProvider` Only load `AssetExtension` configs.
+        - `Symfony\Bridge\Twig\Extension\AssetExtension`
+    - `Zfegg\SymfonyTwigFactory\BaseConfigProvider`
+        - `Symfony\Bridge\Twig\Extension\ExpressionExtension`
+        - `Symfony\Bridge\Twig\Extension\YamlExtension`
+    - `Zfegg\SymfonyTwigFactory\FormConfigProvider` 
+        - `Symfony\Bridge\Twig\Extension\FormExtension`
+    - `Zfegg\SymfonyTwigFactory\TranslationConfigProvider`
+        - `Symfony\Bridge\Twig\Extension\TranslationExtension`
+    - `Zfegg\SymfonyTwigFactory\WorkflowConfigProvider`
+        - `Symfony\Bridge\Twig\Extension\WorkflowExtension`
+
+
+#### 3. Add config in project. / 在项目中添加配置  
 
 Example file `config/autoload/template.global.php`.
 
@@ -51,14 +76,7 @@ Example file `config/autoload/template.global.php`.
 ```php
 
 return [
-    // `zendframework/zend-expressive-twigrenderer` factory config.
-    // `zendframework/zend-expressive-twigrenderer` 扩展的工厂配置.
-    'twig' => [
-        'extensions'     => [
-            AssetExtension::class,
-        ],
-    ],
-    
+    // asset component configs.
     // asset 配置结构详见以下链接
     // @See: http://symfony.com/doc/current/reference/configuration/framework.html#assets
     'assets' => [
@@ -72,5 +90,16 @@ return [
         // - version_strategy
         // - json_manifest_path
     ],
+    
+    // Add form themes.
+    // 'twig' => [ 
+    //     'form_themes' => [
+    //         'form/layout.html.twig'
+    //     ],
+    // ],
 ];
 ```
+
+#### Run the examples. /  运行示例
+
+[example/index.php](example/index.php)

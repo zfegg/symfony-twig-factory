@@ -13,6 +13,8 @@ class ConfigProviderTest extends TestCase
         $config = (new ConfigProvider())();
 
         $this->assertArrayHasKey('dependencies', $config);
+        $this->assertArrayHasKey('twig', $config);
+        $this->assertArrayHasKey('templates', $config);
         $this->assertArrayHasKey('factories', $config['dependencies']);
     }
 }
