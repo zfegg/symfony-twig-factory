@@ -13,7 +13,7 @@ class TranslationConfigProvider
         return [
             'dependencies' => [
                 'factories' => [
-                    TranslationExtension::class => Factory\InvokableFactory::class,
+                    TranslationExtension::class => Factory\TranslationExtensionFactory::class,
                 ],
             ],
             'twig' => [
