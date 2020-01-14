@@ -7,9 +7,9 @@ include __DIR__ . '/../vendor/autoload.php';
 
 
 $configs = (new \Zfegg\SymfonyTwigFactory\ConfigProvider())();
-$configs = array_merge_recursive($configs, (new Zend\Expressive\Twig\ConfigProvider())());
+$configs = array_merge_recursive($configs, (new Mezzio\Twig\ConfigProvider())());
 
-$container = new \Zend\ServiceManager\ServiceManager($configs['dependencies']);
+$container = new \Laminas\ServiceManager\ServiceManager($configs['dependencies']);
 $configs['assets'] = [
     'base_path' => '/',
     'packages'  => [
