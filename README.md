@@ -9,7 +9,7 @@ Symfony twig bridge factories
 
 Using `symfony/twig-bridge` in Expressive. (e.g.: asset,workflow)
 
-在 Zend Expressive 中使用部分的 `symfony/twig-bridge` twig 扩展
+在 Mezzio (Zend Expressive) 中使用部分的 `symfony/twig-bridge` 提供的 twig 扩展 (如: `asset`,`workflow`)
 
 Installation / 安装
 -------------------
