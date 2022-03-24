@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Zfegg\SymfonyTwigFactory;
 
@@ -8,19 +9,17 @@ use Symfony\Component\Workflow\Registry;
 
 class WorkflowConfigProvider
 {
-
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             'dependencies' => [
                 'factories' => [
                     WorkflowExtension::class => Factory\WorkflowExtensionFactory::class,
-                    Registry::class => Factory\InvokableFactory::class,
+                    Registry::class          => Factory\InvokableFactory::class,
                 ],
             ],
-
-            'twig' => [
-                'extensions'     => [
+            'twig'         => [
+                'extensions' => [
                     WorkflowExtension::class,
                 ],
             ],

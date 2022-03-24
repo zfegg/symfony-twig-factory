@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Zfegg\SymfonyTwigFactory;
 
+use function array_merge_recursive;
+
 class ConfigProvider
 {
-
     public function __invoke(): array
     {
         $config = (new BaseConfigProvider())();

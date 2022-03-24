@@ -1,15 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Extension\TranslationExtension;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Zfegg\SymfonyTwigFactory\Factory\TranslationExtensionFactory;
-use PHPUnit\Framework\TestCase;
 
 class TranslationExtensionFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {

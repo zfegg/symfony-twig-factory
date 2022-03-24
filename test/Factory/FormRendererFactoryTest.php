@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Form\TwigRendererEngine;
 use Symfony\Component\Form\FormRenderer;
@@ -10,10 +14,10 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Zfegg\SymfonyTwigFactory\Factory\FormRendererFactory;
-use PHPUnit\Framework\TestCase;
 
 class FormRendererFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {

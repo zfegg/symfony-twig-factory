@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\PathPackage;
@@ -12,6 +15,7 @@ use Zfegg\SymfonyTwigFactory\Factory\AssetPackagesFactory;
 
 class AssetPackagesFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {

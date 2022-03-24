@@ -10,7 +10,6 @@ use Symfony\Component\Asset\Packages;
 
 class AssetTwigExtensionFactory
 {
-
     public function __invoke(ContainerInterface $container): AssetExtension
     {
         return new AssetExtension($container->get(Packages::class));

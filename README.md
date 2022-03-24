@@ -2,14 +2,15 @@ Symfony twig bridge factories
 ==============================
 
 
-[![Build Status](https://travis-ci.org/zfegg/symfony-twig-factory.png)](https://travis-ci.org/zfegg/symfony-twig-factory)
+
+[![GitHub Actions: Run tests](https://github.com/zfegg/symfony-twig-factory/workflows/qa/badge.svg)](https://github.com/zfegg/symfony-twig-factory/actions?query=workflow%3A%22qa%22)
 [![Coverage Status](https://coveralls.io/repos/github/zfegg/symfony-twig-factory/badge.svg?branch=master)](https://coveralls.io/github/zfegg/symfony-twig-factory?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/zfegg/symfony-twig-factory/v/stable.png)](https://packagist.org/packages/zfegg/symfony-twig-factory)
 
 
 Using `symfony/twig-bridge` in Expressive. (e.g.: asset,workflow)
 
-在 Zend Expressive 中使用部分的 `symfony/twig-bridge` twig 扩展
+在 Mezzio (Zend Expressive) 中使用部分的 `symfony/twig-bridge` 提供的 twig 扩展 (如: `asset`,`workflow`)
 
 Installation / 安装
 -------------------

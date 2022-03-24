@@ -15,15 +15,14 @@ use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
 
 class AssetPackagesFactory
 {
-
     public function __invoke(ContainerInterface $container): Packages
     {
-        $configs = $container->get('config')['assets'] ?? [];
+        $configs        = $container->get('config')['assets'] ?? [];
         $defaultPackage = $this->createPackage($configs, $container);
 
         $packages = [];
         if (isset($configs['packages'])) {
-            foreach ((array)$configs['packages'] as $name => $packageConfig) {
+            foreach ((array) $configs['packages'] as $name => $packageConfig) {
                 $packages[$name] = $this->createPackage(
                     $packageConfig,
                     $container

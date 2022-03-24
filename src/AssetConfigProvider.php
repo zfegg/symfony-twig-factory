@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Zfegg\SymfonyTwigFactory;
 
@@ -8,18 +9,17 @@ use Symfony\Component\Asset\Packages;
 
 class AssetConfigProvider
 {
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             'dependencies' => [
                 'factories' => [
-                    Packages::class => Factory\AssetPackagesFactory::class,
+                    Packages::class       => Factory\AssetPackagesFactory::class,
                     AssetExtension::class => Factory\AssetTwigExtensionFactory::class,
                 ],
             ],
-
-            'twig' => [
-                'extensions'     => [
+            'twig'         => [
+                'extensions' => [
                     AssetExtension::class,
                 ],
             ],

@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Zfegg\SymfonyTwigFactory\Factory;
 
@@ -8,8 +9,7 @@ use Twig\RuntimeLoader\ContainerRuntimeLoader;
 
 class ContainerRuntimeLoaderFactory
 {
-
-    public function __invoke(ContainerInterface $container) : ContainerRuntimeLoader
+    public function __invoke(ContainerInterface $container): ContainerRuntimeLoader
     {
         return new ContainerRuntimeLoader($container);
     }
