@@ -2,7 +2,8 @@ Symfony twig bridge factories
 ==============================
 
 
-[![Build Status](https://travis-ci.org/zfegg/symfony-twig-factory.png)](https://travis-ci.org/zfegg/symfony-twig-factory)
+
+[![GitHub Actions: Run tests](https://github.com/zfegg/symfony-twig-factory/workflows/qa/badge.svg)](https://github.com/zfegg/symfony-twig-factory/actions?query=workflow%3A%22qa%22)
 [![Coverage Status](https://coveralls.io/repos/github/zfegg/symfony-twig-factory/badge.svg?branch=master)](https://coveralls.io/github/zfegg/symfony-twig-factory?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/zfegg/symfony-twig-factory/v/stable.png)](https://packagist.org/packages/zfegg/symfony-twig-factory)
 
