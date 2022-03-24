@@ -2,14 +2,15 @@
 
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Extension\YamlExtension;
 use Zfegg\SymfonyTwigFactory\Factory\InvokableFactory;
-use Zfegg\SymfonyTwigFactory\Factory\YamlExtensionFactory;
 use PHPUnit\Framework\TestCase;
 
 class InvokableFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {

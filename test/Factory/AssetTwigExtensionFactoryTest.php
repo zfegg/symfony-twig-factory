@@ -3,6 +3,7 @@
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Extension\AssetExtension;
 use Symfony\Component\Asset\Packages;
@@ -10,6 +11,7 @@ use Zfegg\SymfonyTwigFactory\Factory\AssetTwigExtensionFactory;
 
 class AssetTwigExtensionFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {

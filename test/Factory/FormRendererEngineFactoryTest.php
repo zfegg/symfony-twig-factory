@@ -2,6 +2,7 @@
 
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Form\TwigRendererEngine;
 use Twig\Environment;
@@ -11,6 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class FormRendererEngineFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {

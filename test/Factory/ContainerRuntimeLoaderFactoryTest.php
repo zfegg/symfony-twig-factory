@@ -2,6 +2,7 @@
 
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Twig\RuntimeLoader\ContainerRuntimeLoader;
 use Zfegg\SymfonyTwigFactory\Factory\ContainerRuntimeLoaderFactory;
@@ -9,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class ContainerRuntimeLoaderFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {

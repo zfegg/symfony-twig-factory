@@ -2,6 +2,7 @@
 
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Extension\WorkflowExtension;
 use Symfony\Component\Workflow\Registry;
@@ -10,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class WorkflowExtensionFactoryTest extends TestCase
 {
+    use ProphecyTrait;
 
     public function testInvoke()
     {
