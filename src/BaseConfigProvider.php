@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Zfegg\SymfonyTwigFactory;
 
@@ -14,12 +15,11 @@ class BaseConfigProvider
             'dependencies' => [
                 'factories' => [
                     ExpressionExtension::class => Factory\InvokableFactory::class,
-                    YamlExtension::class => Factory\InvokableFactory::class,
+                    YamlExtension::class       => Factory\InvokableFactory::class,
                 ],
             ],
-
-            'twig' => [
-                'extensions'     => [
+            'twig'         => [
+                'extensions' => [
                     ExpressionExtension::class,
                     YamlExtension::class,
                 ],

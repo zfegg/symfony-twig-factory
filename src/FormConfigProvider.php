@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Zfegg\SymfonyTwigFactory;
 
 use Composer\Autoload\ClassLoader;
@@ -10,10 +12,12 @@ use Symfony\Component\Form\FormRendererEngineInterface;
 use Symfony\Component\Form\FormRendererInterface;
 use Twig\RuntimeLoader\ContainerRuntimeLoader;
 
+use function dirname;
+use function realpath;
+
 class FormConfigProvider
 {
-
-    public function __invoke()
+    public function __invoke(): array
     {
         $reflector = new ReflectionClass(ClassLoader::class);
         $file      = $reflector->getFileName();
@@ -22,31 +26,30 @@ class FormConfigProvider
         return [
             'dependencies' => [
                 'factories' => [
-                    FormExtension::class => Factory\InvokableFactory::class,
-                    ContainerRuntimeLoader::class => Factory\ContainerRuntimeLoaderFactory::class,
-
-                    FormRendererInterface::class => Factory\FormRendererFactory::class,
+                    FormExtension::class               => Factory\InvokableFactory::class,
+                    ContainerRuntimeLoader::class      => Factory\ContainerRuntimeLoaderFactory::class,
+                    FormRendererInterface::class       => Factory\FormRendererFactory::class,
                     FormRendererEngineInterface::class => Factory\FormRendererEngineFactory::class,
                 ],
-                'aliases' => [
+                'aliases'   => [
                     FormRenderer::class => FormRendererInterface::class,
                 ],
             ],
-            'templates' => [
+            'templates'    => [
                 'paths' => [
-                    $vendorDir . '/symfony/twig-bridge/Resources/views/Form'
+                    $vendorDir . '/symfony/twig-bridge/Resources/views/Form',
                 ],
             ],
-            'twig' => [
-                'form_themes' => [
-                    'form_div_layout.html.twig'
+            'twig'         => [
+                'form_themes'     => [
+                    'form_div_layout.html.twig',
                 ],
-                'extensions' => [
+                'extensions'      => [
                     FormExtension::class,
                 ],
                 'runtime_loaders' => [
                     ContainerRuntimeLoader::class,
-                ]
+                ],
             ],
         ];
     }

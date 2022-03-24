@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Twig\RuntimeLoader\ContainerRuntimeLoader;
 use Zfegg\SymfonyTwigFactory\Factory\ContainerRuntimeLoaderFactory;
-use PHPUnit\Framework\TestCase;
 
 class ContainerRuntimeLoaderFactoryTest extends TestCase
 {
@@ -15,7 +17,7 @@ class ContainerRuntimeLoaderFactoryTest extends TestCase
     public function testInvoke()
     {
         $container = $this->prophesize(ContainerInterface::class);
-        $service = (new ContainerRuntimeLoaderFactory())($container->reveal());
+        $service   = (new ContainerRuntimeLoaderFactory())($container->reveal());
 
         $this->assertInstanceOf(ContainerRuntimeLoader::class, $service);
     }

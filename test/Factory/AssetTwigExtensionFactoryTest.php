@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
 use PHPUnit\Framework\TestCase;
@@ -20,7 +22,7 @@ class AssetTwigExtensionFactoryTest extends TestCase
             ->willReturn(new Packages())
             ->shouldBeCalled();
         $factory = new AssetTwigExtensionFactory();
-        $ext = $factory($container->reveal());
+        $ext     = $factory($container->reveal());
         $this->assertInstanceOf(AssetExtension::class, $ext);
     }
 }

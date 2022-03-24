@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Zfegg\SymfonyTwigFactory;
 
@@ -7,8 +8,7 @@ use Symfony\Bridge\Twig\Extension\TranslationExtension;
 
 class TranslationConfigProvider
 {
-
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             'dependencies' => [
@@ -16,11 +16,11 @@ class TranslationConfigProvider
                     TranslationExtension::class => Factory\TranslationExtensionFactory::class,
                 ],
             ],
-            'twig' => [
+            'twig'         => [
                 'extensions' => [
                     TranslationExtension::class,
-                ]
-            ]
+                ],
+            ],
         ];
     }
 }

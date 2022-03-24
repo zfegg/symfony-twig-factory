@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "mezzio/mezzio-twigrenderer": "^2.3",
-        "laminas/laminas-coding-standard": "^1.0",
+        "laminas/laminas-coding-standard": "^2.3.0",
         "laminas/laminas-servicemanager": "^3.3",
         "phpunit/phpunit": "9.5.16",
         "phpspec/prophecy-phpunit": "^2.0",
@@ -49,5 +49,10 @@
     },
     "suggest": {
         "symfony/asset": "Asset factory required"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Zfegg\SymfonyTwigFactory\Factory;
 
@@ -10,7 +11,7 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
 class FormRendererFactory
 {
-    public function __invoke(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container): FormRenderer
     {
         return new FormRenderer(
             $container->get(FormRendererEngineInterface::class),

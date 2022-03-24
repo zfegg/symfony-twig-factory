@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ZfeggTest\SymfonyTwigFactory\Factory;
 
+use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Twig\Form\TwigRendererEngine;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Zfegg\SymfonyTwigFactory\Factory\FormRendererEngineFactory;
-use PHPUnit\Framework\TestCase;
 
 class FormRendererEngineFactoryTest extends TestCase
 {
