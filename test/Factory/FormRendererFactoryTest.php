@@ -27,7 +27,7 @@ class FormRendererFactoryTest extends TestCase
             ->shouldBeCalled();
 
         $container->has(CsrfTokenManagerInterface::class)
-            ->willReturn(null)
+            ->willReturn(false)
             ->shouldBeCalled();
 
         $service = (new FormRendererFactory())($container->reveal());
